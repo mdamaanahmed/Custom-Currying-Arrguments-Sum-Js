@@ -11,10 +11,11 @@ function nArgumentsSum(...args) {
   if (args.length) {
     return iterateRestArgs;
   } else {
-    return 0;
+    return () => 0;
   }
 }
 
 console.log(nArgumentsSum(1, 2, 3, 4, 5)());
 console.log(nArgumentsSum(1)(2, 3, 4, 5)());
 console.log(nArgumentsSum(1, 2)(3)(4)(5)());
+console.log(nArgumentsSum()());
